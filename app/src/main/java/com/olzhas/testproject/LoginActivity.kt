@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
 class LoginActivity : AppCompatActivity() {
 
@@ -12,9 +13,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val signUpbtn: Button = findViewById(R.id.signUp)
-        signUpbtn.setOnClickListener {
-            Intent(this, RegisterActivity::class.java).also { startActivity(it) }
+        val signUptxt : TextView = findViewById(R.id.signUp)
+        signUptxt.setOnClickListener {
+            Intent(this, MainActivity::class.java).also { startActivity(it) }
         }
 
     }
