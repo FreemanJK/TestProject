@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bb"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterFragment">
 
     <TextView
-        android:id="@+id/loginId"
+        android:id="@+id/received_value_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.18" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -33,7 +33,7 @@
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Enter you name:"
+        android:hint="Enter your name:"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginId"
+        app:layout_constraintTop_toBottomOf="@+id/received_value_id"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
 
     <EditText
         android:id="@+id/passwordConfirm"
@@ -148,16 +148,5 @@
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister"
         tools:ignore="TextContrastCheck" />
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
