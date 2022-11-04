@@ -6,26 +6,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
+import com.olzhas.testproject.databinding.FragmentLoginBinding
+import com.olzhas.testproject.databinding.FragmentWelcomeBinding
 import org.w3c.dom.Text
 
 
 class WelcomeFragment : Fragment() {
 
+    private var _binding: FragmentWelcomeBinding? = null
+    private val binding: FragmentWelcomeBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome, container, false)
+        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tv : TextView = view.findViewById(R.id.received_value_id)
+        val tv = binding.receivedValueId
         val text = arguments?.getString("MyArg")
         tv.text = text
+        val tvlog = binding.receivedValueId
+        val textlog = arguments?.getString("MyArg1")
+        tvlog.text = textlog
+
+        val btnContinue = binding.btnContinue
+        btnContinue.setOnClickListener {
+            findNavController().navigate(R.id.interfaceActivity)
+        }
     }
+
+
+
+
 
 
 }

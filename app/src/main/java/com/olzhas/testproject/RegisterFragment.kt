@@ -35,7 +35,7 @@ class RegisterFragment : Fragment() {
             val name = editText.text
             val welcomeAboard = "Welcome Aboard, $name"
             bundle.putString("MyArg", welcomeAboard)
-            findNavController().navigate(R.id.welcomeFragment, bundle)
+                findNavController().navigate(R.id.welcomeFragment, bundle)
         }
     }
 }
