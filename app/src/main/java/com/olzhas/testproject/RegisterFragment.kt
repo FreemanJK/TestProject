@@ -43,8 +43,9 @@ class RegisterFragment : Fragment() {
         btnReg.setOnClickListener {
             val name = editText.text
             val welcomeAboard1 = "Welcome Aboard, $name"
-            bundle.putString("MyArg", welcomeAboard1)
-            findNavController().navigate(R.id.welcomeFragment, bundle)
+            val key = "MyArg"
+            bundle.putString(key, welcomeAboard1)
+            findNavController().navigate(R.id.welcomeRegFragment, bundle)
         }
     }
 }

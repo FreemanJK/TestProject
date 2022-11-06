@@ -11,11 +11,11 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_registerFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
-        <action
             android:id="@+id/action_registerFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_welcomeRegFragment"
+            app:destination="@id/welcomeRegFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -40,4 +40,13 @@
         android:name="com.olzhas.testproject.InterfaceActivity"
         android:label="activity_interface"
         tools:layout="@layout/activity_interface" />
+    <fragment
+        android:id="@+id/welcomeRegFragment"
+        android:name="com.olzhas.testproject.WelcomeRegFragment"
+        android:label="fragment_welcome_reg"
+        tools:layout="@layout/fragment_welcome_reg" >
+        <action
+            android:id="@+id/action_welcomeRegFragment_to_interfaceActivity"
+            app:destination="@id/interfaceActivity" />
+    </fragment>
 </navigation>

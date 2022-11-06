@@ -36,7 +36,8 @@ class LoginFragment : Fragment() {
             val welcomeAboard = "Welcome back!"
             val bundle = Bundle()
             binding.receivedValueId.text = welcomeAboard
-            bundle.putString("MyArg1", welcomeAboard)
+            val key = "MyArg1"
+            bundle.putString(key, welcomeAboard)
             findNavController().navigate(R.id.welcomeFragment, bundle)
         }
         binding.signUp.setOnClickListener {
