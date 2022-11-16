@@ -25,6 +25,7 @@ class WelcomeFragment : Fragment() {
         _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -34,9 +35,9 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val tv = binding.receivedValueId
+        val textreg = arguments?.getString(KEY_TITLE)
+        tv.text = textreg
 
-        val textlog = arguments?.getString("MyArg1")
-        tv.text = textlog
 
         val btnContinue = binding.btnContinue
         btnContinue.setOnClickListener {
@@ -44,9 +45,9 @@ class WelcomeFragment : Fragment() {
         }
     }
 
-
-
-
+    companion object {
+        const val KEY_TITLE = "arg_title"
+    }
 
 
 }

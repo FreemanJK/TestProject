@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.fragment.findNavController
+import com.olzhas.testproject.WelcomeFragment.Companion.KEY_TITLE
 import com.olzhas.testproject.databinding.FragmentRegisterBinding
 import com.olzhas.testproject.databinding.FragmentWelcomeBinding
 
@@ -33,19 +34,18 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val editText = binding.inputName
-        val bundle = Bundle()
         val btnReg = binding.btnRegister
 
         val alreadyHavebtn = binding.alreadyHaveAccount
         alreadyHavebtn.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment, bundle)
+            findNavController().navigate(R.id.loginFragment)
         }
         btnReg.setOnClickListener {
             val name = editText.text
             val welcomeAboard1 = "Welcome Aboard, $name"
-            val key = "MyArg"
-            bundle.putString(key, welcomeAboard1)
-            findNavController().navigate(R.id.welcomeRegFragment, bundle)
+            val bundle = Bundle()
+            bundle.putString(KEY_TITLE, welcomeAboard1)
+            findNavController().navigate(R.id.welcomeFragment, bundle)
         }
     }
 }

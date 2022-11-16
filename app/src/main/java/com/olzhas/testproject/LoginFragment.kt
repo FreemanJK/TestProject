@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.olzhas.testproject.WelcomeFragment.Companion.KEY_TITLE
 import com.olzhas.testproject.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -36,8 +37,7 @@ class LoginFragment : Fragment() {
             val welcomeAboard = "Welcome back!"
             val bundle = Bundle()
             binding.receivedValueId.text = welcomeAboard
-            val key = "MyArg1"
-            bundle.putString(key, welcomeAboard)
+            bundle.putString(KEY_TITLE, welcomeAboard)
             findNavController().navigate(R.id.welcomeFragment, bundle)
         }
         binding.signUp.setOnClickListener {

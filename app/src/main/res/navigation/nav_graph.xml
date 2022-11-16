@@ -14,8 +14,8 @@
             android:id="@+id/action_registerFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_registerFragment_to_welcomeRegFragment"
-            app:destination="@id/welcomeRegFragment" />
+            android:id="@+id/action_registerFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -44,9 +44,5 @@
         android:id="@+id/welcomeRegFragment"
         android:name="com.olzhas.testproject.WelcomeRegFragment"
         android:label="fragment_welcome_reg"
-        tools:layout="@layout/fragment_welcome_reg" >
-        <action
-            android:id="@+id/action_welcomeRegFragment_to_interfaceActivity"
-            app:destination="@id/interfaceActivity" />
-    </fragment>
+        tools:layout="@layout/fragment_welcome_reg" />
 </navigation>

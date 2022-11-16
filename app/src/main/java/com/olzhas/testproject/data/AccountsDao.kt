@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 @Dao
 interface AccountsDao {
@@ -15,9 +16,12 @@ interface AccountsDao {
     @Delete
     suspend fun deleteAccount(account: Accounts)
 
-    @Query("SELECT * FROM accounts WHERE id=:id")
-    suspend fun getAccountById(id: Int): Accounts?
+    @Update
+    suspend fun updateAccount(account: Accounts)
 
-    @Query("SELECT * FROM accounts")
-    fun getAccounts(): Flow<List<Accounts>>
+    @Query("SELECT * FROM `accounts-table`")
+    fun fetchAllAccounts():Flow<List<Accounts>>
+
+    @Query("SELECT * FROM `accounts-table` WHERE id =:id")
+    fun fetchAccountById(id:Int): Flow<Accounts>
 }

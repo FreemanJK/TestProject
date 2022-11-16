@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 class TestViewModel: ViewModel() {
 
     var number = 0
-    val currentNumbber: MutableLiveData<Int> by lazy {
+    val currentNumber: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
 
     }
