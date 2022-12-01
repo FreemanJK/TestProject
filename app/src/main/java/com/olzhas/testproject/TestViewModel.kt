@@ -1,5 +1,6 @@
 package com.olzhas.testproject
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -15,4 +16,14 @@ class TestViewModel: ViewModel() {
         MutableLiveData<Boolean>()
 
     }
+
+    init{
+        Log.d("Homefragment", "TestViewModel created")
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.d("HomeFragment", "TestViewModel cleared!")
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.olzhas.testproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        Log.d("HomeFragment", "HomeFragment onCreateView")
         return binding.root
     }
 
@@ -34,10 +36,15 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("HomeFragment", "HomeFragment destroyed!")
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        ViewModelProvider(this)[TestViewModel::class.java]
         val tv3 = binding.textView3
         val tv4 = binding.textView4
         viewModel.currentNumber.observe(viewLifecycleOwner) {

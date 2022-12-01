@@ -31,18 +31,16 @@
         android:name="com.olzhas.testproject.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
+
+
         <action
-            android:id="@+id/action_welcomeFragment_to_interfaceActivity"
+            android:id="@+id/action_welcomeFragment_to_interfaceActivity2"
             app:destination="@id/interfaceActivity" />
     </fragment>
     <activity
+        tools:layout="@layout/activity_interface"
         android:id="@+id/interfaceActivity"
         android:name="com.olzhas.testproject.InterfaceActivity"
-        android:label="activity_interface"
-        tools:layout="@layout/activity_interface" />
-    <fragment
-        android:id="@+id/welcomeRegFragment"
-        android:name="com.olzhas.testproject.WelcomeRegFragment"
-        android:label="fragment_welcome_reg"
-        tools:layout="@layout/fragment_welcome_reg" />
+        android:label="InterfaceActivity" />
+
 </navigation>
