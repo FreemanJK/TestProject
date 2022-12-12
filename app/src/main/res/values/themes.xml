@@ -28,4 +28,10 @@
     <style name="Theme.TestProject.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.TestProject.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
+
+        <item name="colorControlNormal">@color/toolbar_color_control_normal</item>
+
+    </style>
 </resources>

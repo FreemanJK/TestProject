@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.olzhas.testproject.WelcomeFragment.Companion.KEY_TITLE
+import com.olzhas.testproject.data.Accounts
+import com.olzhas.testproject.data.AccountsApp
+import com.olzhas.testproject.data.AccountsDao
 //import com.olzhas.testproject.data.Accounts
 //import com.olzhas.testproject.data.AccountsApp
 //import com.olzhas.testproject.data.AccountsDao
@@ -46,31 +49,31 @@ class RegisterFragment : Fragment() {
         alreadyHavebtn.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
-       // val accountsDao = (activity?.applicationContext as AccountsApp).db.accountsDao()
+        val accountsDao = (activity?.applicationContext as AccountsApp).db.accountsDao()
         btnReg.setOnClickListener {
             val name = editText.text
             val welcomeAboard1 = "Welcome Aboard, $name"
             val bundle = Bundle()
-            //addAccount(accountsDao)
+            addAccount(accountsDao)
             bundle.putString(KEY_TITLE, welcomeAboard1)
             findNavController().navigate(R.id.welcomeFragment, bundle)
         }
     }
 
-//    fun addAccount(accountsDao: AccountsDao){
-//        val name = binding.inputName?.text.toString()
-//        val email = binding.inputEmail?.text.toString()
-//        val password = binding.password?.text.toString()
-//
-//        if(name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()){
-//            lifecycleScope.launch{
-//                accountsDao.insertAccount(Accounts(name = name, email = email, password = password))
-//                Toast.makeText(AccountsApp.INSTANCE, "Account was created", Toast.LENGTH_LONG).show()
-//                binding.inputName.text.clear()
-//                binding.inputEmail.text.clear()
-//            }
-//        }else{
-//            Toast.makeText(context,"Name cannot be blank",Toast.LENGTH_LONG).show()
-//        }
-//    }
+    fun addAccount(accountsDao: AccountsDao){
+        val name = binding.inputName?.text.toString()
+        val email = binding.inputEmail?.text.toString()
+        val password = binding.password?.text.toString()
+
+        if(name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()){
+            lifecycleScope.launch{
+                accountsDao.insertAccount(Accounts(name = name, email = email, password = password))
+                Toast.makeText(AccountsApp.INSTANCE, "Account was created", Toast.LENGTH_LONG).show()
+                binding.inputName.text.clear()
+                binding.inputEmail.text.clear()
+            }
+        }else{
+            Toast.makeText(AccountsApp.INSTANCE,"Name cannot be blank",Toast.LENGTH_LONG).show()
+        }
+    }
 }
